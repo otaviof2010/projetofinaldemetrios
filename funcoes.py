@@ -66,7 +66,7 @@ def buscar_pacientes_clinica(clinica):
     for h in range(len(cadastros)):
         if cadastros[h][0].lower() == clinica.lower() :
             encontrado = True 
-            print(cadastros[h])
+            return cadastros[h]
     if encontrado == False:
         return "Paciente não encontrado."
 

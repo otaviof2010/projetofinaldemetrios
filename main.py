@@ -3,16 +3,16 @@ from rich import print
 
 
 
-def menu():    
-    print('[bold red]Menu de Navegacao[/bold red]')
-    print('[dark_red]1.Exibir pacientes[/dark_red]')
-    print('[dark_red]2.Cadastrar[/dark_red]')
-    print('[dark_red]3.Remover paciente[/dark_red]')
-    print('[dark_red]4.Alterar sintoma[/dark_red]')
-    print('[dark_red]5.Buscar paciente por nome[/dark_red]')
-    print('[dark_red]6.Buscar pacientes por clinica[/dark_red]')
-    print('[dark_red]7.Buscar pacientes por sintoma[/dark_red]')
-    print('[dark_red]8.sair[/dark_red]')
+def menu():
+    print('[bold blue]Menu de Navegacao[/]')
+    print('[dark_blue]1.Exibir pacientes[/]')
+    print('[dark_blue]2.Cadastrar[/]')
+    print('[dark_blue]3.Remover paciente[/]')
+    print('[dark_blue]4.Alterar sintoma[/]')
+    print('[dark_blue]5.Buscar paciente por nome[/]')
+    print('[dark_blue]6.Buscar pacientes por clinica[/]')
+    print('[dark_blue]7.Buscar pacientes por sintoma[/]')
+    print('[dark_blue]8.sair[/]')
     op = int(input('escolha uma opcao '))
     print (f'[italic bold white] opcao escolhida:{op} [/italic bold white]')
     return op
@@ -65,5 +65,3 @@ while True:
         break
     else:
         print("[bold red]Opcao invalida![/bold red]")
-
-        
