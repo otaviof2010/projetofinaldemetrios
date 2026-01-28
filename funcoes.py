@@ -41,13 +41,14 @@ def remover_paciente(nome,clinica):
         return "Paciente removido da lista de cadastros."
     else: 
         return "Paciente não encontrado."
-
+    
+    
 def buscar_paciente_nome(clinica,nome):
     encontrado = False
     for l in range(len(cadastros)):
         if cadastros[l][1].lower() == nome.lower() and cadastros[l][0].lower() == clinica.lower() :
             encontrado = True 
-            print(cadastros[l])
+            return cadastros[l] 
     if encontrado == False: 
         return "Paciente não encontrado."
 
@@ -56,7 +57,7 @@ def buscar_pacientes_sintoma(sintoma,clinica):
     for g in range(len(cadastros)):
         if cadastros[g][3].lower() == sintoma.lower() and cadastros[g][0].lower() == clinica.lower() :
             encontrado = True 
-            print(cadastros[g])
+            return cadastros[g]
     if encontrado == False:
         return "Paciente não encontrado."
 
