@@ -17,22 +17,30 @@ arquivo.close()
 def cadastrar_paciente (clinica, nome, idade, sintoma):
     novo_paciente = [clinica, nome, idade, sintoma]
     cadastros.append(novo_paciente)
-    print ("Paciente cadastrado!")
+    
+    arquivo = open("cadastros.csv", "a")
+    arquivo.write(clinica + "," + nome + "," + idade + "," + sintoma + "\n")
+    arquivo.close()
+    return "Paciente cadastrado!"
 
 def exibir_pacientes():
-    for j in range (len(cadastros)):
-        print(cadastros[j])
+    return cadastros
 
 def remover_paciente(nome,clinica):
     encontrado = False
-    for ç in range(len(cadastros)):
-        if cadastros[ç][1].lower() == nome.lower() and cadastros[ç][0].lower() == clinica.lower():
+    for k in range(len(cadastros)):
+        if cadastros[k][1].lower() == nome.lower() and cadastros[k][0].lower() == clinica.lower():
             encontrado = True 
-            del cadastros[ç]
+            del cadastros[k]
+            break
     if encontrado == True:
-        print("Paciente removido da lista de cadastros.")
+        arquivo = open("cadastros.csv", "w")
+        for paciente in cadastros:
+            arquivo.write(paciente[0] + "," + paciente[1] + "," + paciente[2] + "," + paciente[3] +"\n")
+        arquivo.close()
+        return "Paciente removido da lista de cadastros."
     else: 
-        print("Paciente não encontrado.")
+        return "Paciente não encontrado."
 
 def buscar_paciente_nome(clinica,nome):
     encontrado = False

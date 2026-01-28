@@ -11,9 +11,10 @@ def menu():
     console.print('[dark_red]2.cadastrar[/dark_red]')
     console.print('[dark_red]3.remover paciente[/dark_red]')
     console.print('[dark_red]4.alterar sintoma[/dark_red]')
-    console.print('[dark_red]5.buscar pacientes por clinica[/dark_red]')
-    console.print('[dark_red]6.buscar pacientes por sintoma[/dark_red]')
-    console.print('[dark_red]7.sair[/dark_red]')
+    console.print('[dark_red]5.buscar paciente por nome[/dark_red]')
+    console.print('[dark_red]6.buscar pacientes por clinica[/dark_red]')
+    console.print('[dark_red]7.buscar pacientes por sintoma[/dark_red]')
+    console.print('[dark_red]8.sair[/dark_red]')
     cadastros.close()
     
     op = int(input('escolha uma opção '))
@@ -27,10 +28,11 @@ while True:
         print(funcoes.exibir_pacientes())
         
     elif opção == 2:
-        nome = input("nome:")
-        idade = input('idade:')
-        sintoma = input('sintoma:')
-        clinica = input('clinica:')
+        clinica = input('clinica: ')
+        nome = input("nome: ")
+        idade = input('idade: ')
+        sintoma = input('sintoma: ')
+        
 
         print(funcoes.cadastrar_paciente (clinica, nome, idade, sintoma))
 
@@ -62,7 +64,6 @@ while True:
 
     elif opção == 8:
         console.print("[bold white]Saindo do sistema...[/bold white]")
-
         break
     else:
         console.print("[bold red]Opção inválida![/bold red]")
