@@ -53,21 +53,23 @@ def buscar_paciente_nome(clinica,nome):
         return "Paciente não encontrado."
 
 def buscar_pacientes_sintoma(sintoma,clinica):
-    encontrado = False 
-    for g in range(len(cadastros)):
-        if cadastros[g][3].lower() == sintoma.lower() and cadastros[g][0].lower() == clinica.lower() :
-            encontrado = True 
-            return cadastros[g]
-    if encontrado == False:
+    encontrados = []
+    for paciente in cadastros:
+        if paciente[3].lower() == sintoma.lower() and paciente[0].lower() == clinica.lower():
+            encontrados.append(paciente)
+    if len(encontrados) > 0:
+        return encontrados
+    else:
         return "Paciente não encontrado."
 
 def buscar_pacientes_clinica(clinica):
-    encontrado = False
-    for h in range(len(cadastros)):
-        if cadastros[h][0].lower() == clinica.lower() :
-            encontrado = True 
-            return cadastros[h]
-    if encontrado == False:
+    encontrados = []
+    for paciente in cadastros:
+        if paciente[0].lower() == clinica.lower():
+            encontrados.append(paciente)
+    if len(encontrados) > 0:
+        return encontrados
+    else:
         return "Paciente não encontrado."
 
 def alterar_sintoma(nome, novo_sintoma,clinica):
@@ -80,3 +82,5 @@ def alterar_sintoma(nome, novo_sintoma,clinica):
         return "Sintoma alterado."
     else:
         return "Paciente não encontrado."
+    
+
