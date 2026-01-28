@@ -49,16 +49,16 @@ def buscar_paciente_nome(clinica,nome):
             encontrado = True 
             print(cadastros[l])
     if encontrado == False: 
-        print("Paciente não encontrado.")
+        return "Paciente não encontrado."
 
-def buscar_pacientes_sintoma(sintoma):
+def buscar_pacientes_sintoma(sintoma,clinica):
     encontrado = False 
     for g in range(len(cadastros)):
-        if cadastros[g][3].lower() == sintoma.lower():
+        if cadastros[g][3].lower() == sintoma.lower() and cadastros[g][0].lower() == clinica.lower() :
             encontrado = True 
             print(cadastros[g])
     if encontrado == False:
-        print("Paciente não encontrado.")
+        return "Paciente não encontrado."
 
 def buscar_pacientes_clinica(clinica):
     encontrado = False
@@ -67,15 +67,15 @@ def buscar_pacientes_clinica(clinica):
             encontrado = True 
             print(cadastros[h])
     if encontrado == False:
-        print("Paciente não encontrado.")
+        return "Paciente não encontrado."
 
-def alterar_sintoma(nome, novo_sintoma):
+def alterar_sintoma(nome, novo_sintoma,clinica):
     encontrado = False 
     for y in range(len(cadastros)):
-        if cadastros[y][1].lower() == nome.lower():
+        if cadastros[y][1].lower() == nome.lower() and cadastros[y][0].lower() == clinica.lower():
             encontrado = True 
             cadastros[y][3] = novo_sintoma
     if encontrado == True:
-        print("Sintoma alterado.")
+        return "Sintoma alterado."
     else:
-        print("Paciente não encontrado.")
+        return "Paciente não encontrado."
