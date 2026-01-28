@@ -19,7 +19,7 @@ def cadastrar_paciente (clinica, nome, idade, sintoma):
     cadastros.append(novo_paciente)
     
     arquivo = open("cadastros.csv", "a")
-    arquivo.write(clinica + "," + nome + "," + idade + "," + sintoma + "\n")
+    arquivo.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
     arquivo.close()
     return "Paciente cadastrado!"
 
@@ -36,7 +36,7 @@ def remover_paciente(nome,clinica):
     if encontrado == True:
         arquivo = open("cadastros.csv", "w")
         for paciente in cadastros:
-            arquivo.write(paciente[0] + "," + paciente[1] + "," + paciente[2] + "," + paciente[3] +"\n")
+            arquivo.write(paciente[0] + "," + paciente[1] + "," + str(paciente[2]) + "," + paciente[3] +"\n")
         arquivo.close()
         return "Paciente removido da lista de cadastros."
     else: 
