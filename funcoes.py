@@ -35,13 +35,12 @@ def remover_paciente(nome,clinica):
             break
     if encontrado == True:
         arquivo = open("cadastros.csv", "w")
-        for paciente in cadastros:
-            arquivo.write(paciente[0] + "," + paciente[1] + "," + str(paciente[2]) + "," + paciente[3] +"\n")
+        for o in range (len(cadastros)):
+            arquivo.write(cadastros[o][0] + "," + cadastros[o][1] + "," + str(cadastros[o][2]) + "," + cadastros[o][3] +"\n")
         arquivo.close()
         return "Paciente removido da lista de cadastros."
     else: 
         return "Paciente não encontrado."
-    
     
 def buscar_paciente_nome(clinica,nome):
     encontrado = False
@@ -54,9 +53,9 @@ def buscar_paciente_nome(clinica,nome):
 
 def buscar_pacientes_sintoma(sintoma,clinica):
     encontrados = []
-    for paciente in cadastros:
-        if paciente[3].lower() == sintoma.lower() and paciente[0].lower() == clinica.lower():
-            encontrados.append(paciente)
+    for g in range(len(cadastros)):
+        if cadastros[g][3].lower() == sintoma.lower() and cadastros[g][0].lower() == clinica.lower() :
+            encontrados.append(cadastros[g])
     if len(encontrados) > 0:
         return encontrados
     else:
@@ -64,13 +63,13 @@ def buscar_pacientes_sintoma(sintoma,clinica):
 
 def buscar_pacientes_clinica(clinica):
     encontrados = []
-    for paciente in cadastros:
-        if paciente[0].lower() == clinica.lower():
-            encontrados.append(paciente)
+    for h in range(len(cadastros)):
+        if cadastros[h][0].lower() == clinica.lower() :
+            encontrados.append(cadastros[h])
     if len(encontrados) > 0:
         return encontrados
     else:
-        return "Paciente não encontrado."
+        return "Não há pacientes cadastrados nesta clínica."
 
 def alterar_sintoma(nome, novo_sintoma,clinica):
     encontrado = False 

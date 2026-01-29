@@ -1,53 +1,51 @@
-Clinica A,Otomenti,34,amnesia
-Clinica B,Maria,28,dor de cabeca
-Clinica C,Joao,45,febre
-Clinica A,Ana,30,tosse
-Clinica B,Paulo,50,dor nas costas
-Clinica C,Carla,25,dor de garganta
-Clinica A,Ricardo,40,amnesia
-Clinica B,Laura,32,febre
-Clinica C,Bruno,29,tosse
-Clinica A,Sophia,27,dor de cabeca
-Clinica B,Felipe,38,dor nas costas
-Clinica C,Isabela,31,dor de garganta
-Clinica A,Marcos,36,amnesia
-Clinica B,camila,24,febre
-Clinica C,diego,42,tosse
-Clinica A,leticia,33,dor de cabeca
-Clinica B,rafael,39,dor nas costas
-Clinica C,bianca,26,dor de garganta
-Clinica A,thiago,41,amnesia
-Clinica B,aline,29,febre
-Clinica C,gustavo,37,tosse
-Clinica A,vanessa,35,dor de cabeca
-Clinica B,bruna,23,dor nas costas
-Clinica C,eduardo,44,dor de garganta
-Clinica A,paula,30,amnesia
-Clinica B,leandro,34,febre
-Clinica C,adriana,28,tosse
-Clinica A,fernando,43,dor de cabeca
-Clinica B,monica,31,dor nas costas
-Clinica C,roberto,46,dor de garganta
-Clinica A,carolina,27,amnesia
-Clinica B,daniel,38,febre
-Clinica C,patricia,33,tosse
-Clinica A,alexandre,39,dor de cabeca
-Clinica B,renata,26,dor nas costas
-Clinica C,mariana,41,dor de garganta
-Clinica A,ricardo,40,amnesia
-Clinica B,laura,32,febre
-Clinica C,bruno,29,tosse
-Clinica A,sophia,27,dor de cabeca
-Clinica B,felipe,38,dor nas costas
-Clinica C,isabela,31,dor de garganta
-Clinica A,marcos,36,amnesia
-Clinica B,camila,24,febre
-Clinica C,Diego,42,tosse
-Clinica A,Leticia,33,dor de cabeca
-Clinica B,Rafael,39,dor nas costas
-Clinica C,Bianca,26,dor de garganta
-Clinica A,Thiago,41,amnesia
-Clinica B,Aline,29,febre
-o,oto,14,oto
-oto,to,24,b
-y,u,9,o
+clinica,nome,idade,sintoma
+Clinica 1,Maria,80,febre
+Clinica 3,Melissa,13,dor de dente
+Clinica 2,Juliana,20,dores musculares
+Clinica 4,Francisco,60,dor de cabeca
+Clinica 3,Julia,15,dor de garganta
+Clinica 4,Guilherme,19,dengue
+Clinica 1,Benedita,56,gastrite
+Clinica 2,Joana,35,gripe
+Clinica 3,Sophia,6,resfriado
+Clinica 4,Marcelo,9,sarampo
+Clinica 2,Maria Helena,17,dores nas articulacoes
+Clinica 1,Fernando,24,anemia
+Clinica 3,Valentina,3,dor de ouvido
+Clinica 3,Daniel,17,conjuntivite
+Clinica 4,Ana Clara,15,virose
+Clinica 1,Felipe,14,refluxo
+Clinica 4,Lucas,34,enxaqueca
+Clinica 2,Camila,27,rinite
+Clinica 1,Daniela,20,hepatite
+Clinica 4,Gabriel,11,catapora
+Clinica 3,Emilly,16,queimaduras
+Clinica 4,Otavio,18,apendicite
+Clinica 1,Kaiky,12,tontura
+Clinica 3,Liz,8,catapora
+Clinica 2,Emanoella,13,enjoo
+Clinica 1,Bruno,23,desmaio 
+Clinica 1,Pedro,24,febre
+Clinica 3,Pedro Henrique,19,dengue
+Clinica 2,Flavia,30,dor de garganta 
+Clinica 1,Isaac,13,fratura no braco
+Clinica 2,Ana Sofia,10,dores no corpo
+Clinica 1,Francisca,57,virose
+Clinica 4,Josefa,88,gripe
+Clinica 1,Roberto,17,diabetes
+Clinica 4,Celine,25,enxaqueca
+Clinica 2,Mariana,11,fratura na perna
+Clinica 1,Emilia,18,dor de cabeca
+Clinica 3,Fernanda,22,tontura
+Clinica 2,Elizangela,26,desmaio
+Clinica 3,Elizabeth,56,queimaduras 
+Clinica 4,Rodolfo,49,dores musculares
+Clinica 2,Cassandra,34,dores nas articulacoes
+Clinica 3,Emanoel,29,febre
+Clinica 1,Olivia,20,resfriado
+Clinica 2,Lorena,16,dor de ouvido
+Clinica 3,Wesley,33,dor de dente
+Clinica 4,Maria Alice,12,catapora
+Clinica 2,Stefany,13,virose
+Clinica 3,Paulo,44,convulsao
+Clinica 1,Flaviana,70,tontura

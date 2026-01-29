@@ -12,16 +12,15 @@ def menu():
     print('[dark_blue]5.Buscar paciente por nome[/]')
     print('[dark_blue]6.Buscar pacientes por clinica[/]')
     print('[dark_blue]7.Buscar pacientes por sintoma[/]')
-    print('[dark_blue]8.sair[/]')
-    op = int(input('escolha uma opcao '))
-    print (f'[italic bold white] opcao escolhida:{op} [/italic bold white]')
+    print('[dark_blue]8.Sair[/]')
+    op = int(input('Escolha uma opção: '))
+    print (f'[italic bold white] Opção escolhida: {op} [/italic bold white]')
     return op
 
 while True:
     opcao = menu()
 
     if opcao == 1:
-        
         print(funcoes.exibir_pacientes())
         
     elif opcao == 2:
@@ -29,35 +28,31 @@ while True:
         nome = input("Nome: ")
         idade = int(input('Idade: ')) 
         sintoma = input('Sintoma: ')
-        
         print(funcoes.cadastrar_paciente (clinica, nome, idade, sintoma))
-        
 
     elif opcao == 3:
-        nome = input('Escreva o nome do paciente q vc quer remover ')
-        clinica = input('Escreva a clinica do paciente q vc quer remover ')
+        nome = input('Escreva o nome do paciente que você quer remover: ')
+        clinica = input('Escreva a clínica do paciente que você quer remover: ')
         print(funcoes.remover_paciente(nome,clinica))
         
     elif opcao == 4:
-        nome = input('Escreva o nome do paciente ')
-        novo_sintoma = input('Escreva o sintoma q vc quer alterar ')
-        clinica = input('Escreva a clinica ')
+        nome = input('Escreva o nome do paciente: ')
+        novo_sintoma = input('Escreva o novo sintoma: ')
+        clinica = input('Escreva a clínica: ')
         print(funcoes.alterar_sintoma(nome,novo_sintoma,clinica))
 
     elif opcao == 5:
-        nome = input('Escreva o nome do paciente ')
-        clinica = input('Escreva a clinica ')
-        
+        nome = input('Escreva o nome do paciente: ')
+        clinica = input('Escreva a clínica: ')
         print(funcoes.buscar_paciente_nome(clinica,nome))
 
     elif opcao == 6:
-        clinica = input('Escreva a clinica ')
-        
+        clinica = input('Escreva a clínica: ')
         print(funcoes.buscar_pacientes_clinica(clinica))
     
     elif opcao == 7:
-        sintoma = input('Escreva o sintoma ')
-        clinica = input('Escreva a clinica ')
+        sintoma = input('Escreva o sintoma: ')
+        clinica = input('Escreva a clinica: ')
         print(funcoes.buscar_pacientes_sintoma(sintoma,clinica))
 
     elif opcao == 8:
@@ -65,3 +60,5 @@ while True:
         break
     else:
         print("[bold red]Opcao invalida![/bold red]")
+    
+    
