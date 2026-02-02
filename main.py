@@ -13,7 +13,8 @@ def menu():
     print('[dark_blue]6.Buscar pacientes por clinica[/]')
     print('[dark_blue]7.Buscar pacientes por sintoma[/]')
     print('[dark_blue]8.Transferir paciente[/]')
-    print('[dark_blue]9.Sair[/]')
+    print('[dark_blue]9.Exibir historico[/]')
+    print('[dark_blue]10.Sair[/]')
     op = int(input('Escolha uma opção: '))
     print (f'[italic bold white] Opção escolhida: {op} [/italic bold white]')
     return op
@@ -40,7 +41,9 @@ while True:
         nome = input('Escreva o nome do paciente: ')
         novo_sintoma = input('Escreva o novo sintoma: ')
         clinica = input('Escreva a clínica: ')
-        print(funcoes.alterar_sintoma(nome,novo_sintoma,clinica))
+        idade = int(input('Idade atual para registro: '))
+        sintoma = input('Sintoma atual para registro: ')
+        print(funcoes.alterar_sintoma(nome,novo_sintoma,clinica,idade,sintoma))
 
     elif opcao == 5:
         nome = input('Escreva o nome do paciente: ')
@@ -59,9 +62,14 @@ while True:
         nome = input('Escreva o nome do paciente: ')
         nova_clinica = input('Escreva a nova clínica: ')
         clinica = input('Escreva a clínica atual: ')
-        print(funcoes.transferir_paciente(nome,nova_clinica,clinica))
+        idade = int(input('Idade atual para registro: '))
+        sintoma = input('Sintoma atual para registro: ')
+        print(funcoes.transferir_paciente(nome,nova_clinica,clinica,idade,sintoma))
 
     elif opcao == 9:
+        print(funcoes.exibir_historico())
+
+    elif opcao == 10:
         print("[bold white]Saindo do sistema...[/bold white]")
         break
     else:

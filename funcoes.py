@@ -14,6 +14,21 @@ for i in range (len(linhas)):
     cadastros.append(linha)
 arquivo.close()
 
+h = open("historico.csv", "r")
+linhas = h.readlines()
+historico = []
+for i in range (len(linhas)):
+    linha = []
+    texto = ""
+    for j in range (len(linhas[i])):
+        if linhas[i][j] != "," and linhas[i][j] != "\n":
+            texto += linhas[i][j]
+        else:
+            linha.append(texto)
+            texto = ""
+    historico.append(linha)
+h.close()
+
 def cadastrar_paciente (clinica, nome, idade, sintoma):
     novo_paciente = [clinica, nome, idade, sintoma]
     cadastros.append(novo_paciente)
@@ -63,34 +78,42 @@ def buscar_pacientes_sintoma(sintoma,clinica):
 
 def buscar_pacientes_clinica(clinica):
     encontrados = []
-    for h in range(len(cadastros)):
-        if cadastros[h][0].lower() == clinica.lower() :
-            encontrados.append(cadastros[h])
+    for z in range(len(cadastros)):
+        if cadastros[z][0].lower() == clinica.lower() :
+            encontrados.append(cadastros[z])
     if len(encontrados) > 0:
         return encontrados
     else:
         return "Não há pacientes cadastrados nesta clínica."
 
-def alterar_sintoma(nome,novo_sintoma,clinica):
+def alterar_sintoma(nome,novo_sintoma,clinica,idade,sintoma):
     encontrado = False 
     for y in range(len(cadastros)):
         if cadastros[y][1].lower() == nome.lower() and cadastros[y][0].lower() == clinica.lower():
             encontrado = True 
+            h = open("historico.csv", "a")
+            h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
+            h.close()
             cadastros[y][3] = novo_sintoma
     if encontrado == True:
         return "Sintoma alterado."
     else:
         return "Paciente não encontrado."
     
-def transferir_paciente(nome,nova_clinica,clinica):
+def transferir_paciente(nome,nova_clinica,clinica,idade,sintoma):
     encontrado = False 
     for y in range(len(cadastros)):
         if cadastros[y][1].lower() == nome.lower() and cadastros[y][0].lower() == clinica.lower():
-            encontrado = True 
+            encontrado = True
+            h = open("historico.csv", "a")
+            h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
+            h.close() 
             cadastros[y][0] = nova_clinica
     if encontrado == True:
         return "paciente transferido."
     else:
         return "Paciente não encontrado."
-    
+
+def exibir_historico():
+    return historico
 
