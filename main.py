@@ -57,8 +57,8 @@ while True:
         print(funcoes.buscar_pacientes_sintoma(sintoma,clinica))
     elif opcao == 8:
         nome = input('Escreva o nome do paciente: ')
-        nova_clinica = input('Escreva o novo sintoma: ')
-        clinica = input('Escreva a clínica: ')
+        nova_clinica = input('Escreva a nova clínica: ')
+        clinica = input('Escreva a clínica atual: ')
         print(funcoes.transferir_paciente(nome,nova_clinica,clinica))
 
     elif opcao == 9:
