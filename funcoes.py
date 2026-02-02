@@ -71,7 +71,7 @@ def buscar_pacientes_clinica(clinica):
     else:
         return "Não há pacientes cadastrados nesta clínica."
 
-def alterar_sintoma(nome, novo_sintoma,clinica):
+def alterar_sintoma(nome,novo_sintoma,clinica):
     encontrado = False 
     for y in range(len(cadastros)):
         if cadastros[y][1].lower() == nome.lower() and cadastros[y][0].lower() == clinica.lower():
@@ -79,6 +79,17 @@ def alterar_sintoma(nome, novo_sintoma,clinica):
             cadastros[y][3] = novo_sintoma
     if encontrado == True:
         return "Sintoma alterado."
+    else:
+        return "Paciente não encontrado."
+    
+def transferir_paciente(nome,nova_clinica,clinica):
+    encontrado = False 
+    for y in range(len(cadastros)):
+        if cadastros[y][1].lower() == nome.lower() and cadastros[y][0].lower() == clinica.lower():
+            encontrado = True 
+            cadastros[y][0] = nova_clinica
+    if encontrado == True:
+        return "paciente transferido."
     else:
         return "Paciente não encontrado."
     
