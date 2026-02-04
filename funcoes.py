@@ -38,10 +38,19 @@ def cadastrar_paciente (clinica, nome, idade, sintoma):
     arquivo.close()
     return "Paciente cadastrado!"
 
+def cadastrar_paciente_historico (clinica, nome, idade, sintoma):
+    novo_paciente = [clinica, nome, idade, sintoma]
+    historico.append(novo_paciente)
+    
+    h = open("historico.csv", "a")
+    h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
+    h.close()
+    return "Paciente cadastrado!"
+
 def exibir_pacientes():
     return cadastros
 
-def remover_paciente(nome,clinica):
+def remover_paciente(nome,clinica,idade,sintoma):
     encontrado = False
     for k in range(len(cadastros)):
         if cadastros[k][1].lower() == nome.lower() and cadastros[k][0].lower() == clinica.lower():
@@ -53,6 +62,27 @@ def remover_paciente(nome,clinica):
         for o in range (len(cadastros)):
             arquivo.write(cadastros[o][0] + "," + cadastros[o][1] + "," + str(cadastros[o][2]) + "," + cadastros[o][3] +"\n")
         arquivo.close()
+
+        h = open("historico.csv", "a")
+        h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
+        h.close() 
+
+        return "Paciente removido da lista de cadastros."
+    else: 
+        return "Paciente não encontrado."
+    
+def remover_paciente_historico(nome,clinica):
+    encontrado = False
+    for k in range(len(historico)):
+        if historico[k][1].lower() == nome.lower() and historico[k][0].lower() == clinica.lower():
+            encontrado = True 
+            del historico[k]
+            break
+    if encontrado == True:
+        h = open("historico.csv", "w")
+        for o in range (len(historico)):
+            h.write(historico[o][0] + "," + historico[o][1] + "," + str(historico[o][2]) + "," + historico[o][3] +"\n")
+        h.close()
         return "Paciente removido da lista de cadastros."
     else: 
         return "Paciente não encontrado."

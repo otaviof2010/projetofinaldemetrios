@@ -14,7 +14,9 @@ def menu():
     print('[dark_blue]7.Buscar pacientes por sintoma[/]')
     print('[dark_blue]8.Transferir paciente[/]')
     print('[dark_blue]9.Exibir historico[/]')
-    print('[dark_blue]10.Sair[/]')
+    print('[dark_blue]10.Cadastrar no historico[/]')
+    print('[dark_blue]11.Remover paciente do historico[/]')
+    print('[dark_blue]12.Sair[/]')
     op = int(input('Escolha uma opção: '))
     print (f'[italic bold white] Opção escolhida: {op} [/italic bold white]')
     return op
@@ -35,7 +37,9 @@ while True:
     elif opcao == 3:
         nome = input('Escreva o nome do paciente que você quer remover: ')
         clinica = input('Escreva a clínica do paciente que você quer remover: ')
-        print(funcoes.remover_paciente(nome,clinica))
+        idade = int(input('Idade atual para registro: '))
+        sintoma = input('Sintoma atual para registro: ')
+        print(funcoes.remover_paciente(nome,clinica,idade,sintoma))
         
     elif opcao == 4:
         nome = input('Escreva o nome do paciente: ')
@@ -71,6 +75,18 @@ while True:
         print(funcoes.exibir_historico())
 
     elif opcao == 10:
+        clinica = input('Clinica: ')
+        nome = input("Nome: ")
+        idade = int(input('Idade: ')) 
+        sintoma = input('Sintoma: ')
+        print(funcoes.cadastrar_paciente_historico(clinica, nome, idade, sintoma))
+    
+    elif opcao == 11:
+        nome = input('Escreva o nome do paciente que você quer remover: ')
+        clinica = input('Escreva a clínica do paciente que você quer remover: ')
+        print(funcoes.remover_paciente_historico(nome,clinica))
+
+    elif opcao == 12:
         print("[bold white]Saindo do sistema...[/bold white]")
         break
     else:
