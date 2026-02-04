@@ -91,11 +91,21 @@ def alterar_sintoma(nome,novo_sintoma,clinica,idade,sintoma):
     for y in range(len(cadastros)):
         if cadastros[y][1].lower() == nome.lower() and cadastros[y][0].lower() == clinica.lower():
             encontrado = True 
-            h = open("historico.csv", "a")
-            h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
-            h.close()
             cadastros[y][3] = novo_sintoma
+
     if encontrado == True:
+
+        arquivo = open("cadastros.csv", "w")
+        
+        for o in range (len(cadastros)):
+            arquivo.write(cadastros[o][0] + "," + cadastros[o][1] + "," + str(cadastros[o][2]) + "," + cadastros[o][3] +"\n")
+        arquivo.close()
+        
+        
+        h = open("historico.csv", "a")
+        h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
+        h.close()
+        
         return "Sintoma alterado."
     else:
         return "Paciente não encontrado."
@@ -105,11 +115,18 @@ def transferir_paciente(nome,nova_clinica,clinica,idade,sintoma):
     for y in range(len(cadastros)):
         if cadastros[y][1].lower() == nome.lower() and cadastros[y][0].lower() == clinica.lower():
             encontrado = True
-            h = open("historico.csv", "a")
-            h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
-            h.close() 
+            
             cadastros[y][0] = nova_clinica
     if encontrado == True:
+        arquivo = open("cadastros.csv", "w")
+        
+        for o in range (len(cadastros)):
+            arquivo.write(cadastros[o][0] + "," + cadastros[o][1] + "," + str(cadastros[o][2]) + "," + cadastros[o][3] +"\n")
+        arquivo.close()
+        
+        h = open("historico.csv", "a")
+        h.write(clinica + "," + nome + "," + str(idade) + "," + sintoma + "\n")
+        h.close() 
         return "paciente transferido."
     else:
         return "Paciente não encontrado."

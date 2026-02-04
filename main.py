@@ -64,6 +64,7 @@ while True:
         clinica = input('Escreva a clínica atual: ')
         idade = int(input('Idade atual para registro: '))
         sintoma = input('Sintoma atual para registro: ')
+        
         print(funcoes.transferir_paciente(nome,nova_clinica,clinica,idade,sintoma))
 
     elif opcao == 9:
